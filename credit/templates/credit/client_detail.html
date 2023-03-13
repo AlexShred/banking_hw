@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if object %}
+            <div class="container">
+            <h3 class="mb-5 mt-5 text-center">Clients</h3>
+            <table class="table table-hover">
+    <ul>
+
+       <legend><h1>{{ object.name }}</h1></legend>
+    {% for account in object.accounts.all %}
+        <tr>
+          <td>{{ account.client }}</td>
+        </tr>
+    {% endfor %}
+
+    </ul>
+                </table>
+            </div>
+{% else %}
+    <p>No clients are available.</p>
+{% endif %}
+
+{% endblock %}

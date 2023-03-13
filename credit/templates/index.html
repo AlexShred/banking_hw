@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% if clients %}
+<div class="container">
+            <h3 class="mb-5 mt-5 text-center">clients</h3>
+            <table class="table table-hover">
+    <ul>
+    {% for client in clients %}
+        <tr>
+            <th scope="row">{{ client.id }}</th>
+          <td>{{ client.name }}</td>
+          <td>{{ client.citizenship }}</td>
+          <td>{{ client.birth_year }}</td>
+          <td>{{ client.work_place }}</td>
+        </tr>
+
+    {% endfor %}
+
+    </ul>
+                </table>
+            </div>
+{% else %}
+    <p>No items are available.</p>
+{% endif %}
+
+{% endblock %}
